@@ -7,8 +7,8 @@
     "editor": ["./styles/wp-dashboard/editor.scss"],
     "customizer": ["./scripts/wp-dashboard/customizer.js"]
   },
-  "publicPath": "/wp-content/themes/paramir",
-  "devUrl": "http://localhost",
+  "publicPath": "http://localhost:3000/wp-content/themes/paramir",
+  "devUrl": "http://localhost:3000",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": ["*.php", "**/*.php"]

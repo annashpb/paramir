@@ -80,3 +80,8 @@ add_filter('login_errors', 'wp_login_obscure');
 
 // Disable the theme / plugin text editor in Admin
 define('DISALLOW_FILE_EDIT', true);
+
+
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
+}

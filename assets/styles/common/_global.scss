@@ -1,1 +1,29 @@
 //global styles
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  * {
+    font-family: "Lato", sans-serif;
+    color: #ffffff;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    width: 1115px;
+    margin: 0 auto;
+  }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme.
  *
@@ -8,31 +9,39 @@
  * @package Beetroot
  */
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-<header class="banner">
-	<div class="container">
-		<a class="brand" href="<?php esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-		<nav class="nav-primary">
-			<?php
-			if ( has_nav_menu( 'primary' ) ) :
-				wp_nav_menu(
-					[
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'walker'         => new beetroot_navwalker(),
-					]
-				);
-			endif;
-			?>
-		</nav><!-- .nav-primary -->
-	</div><!-- .container -->
-</header><!-- .banner -->
-<div id="content" class="site-content">
+	<header class="banner">
+		<div class="container">
+			<a class="brand" href="<?php esc_url(home_url('/')); ?>">
+				<img src="<?php echo get_field('site_logo', 'option')['url']; ?>" alt="<?php echo get_field('site_logo', 'option')['alt']; ?>">
+			</a>
+			<nav class="nav-primary">
+				<?php
+				if (has_nav_menu('primary')) :
+					wp_nav_menu(
+						[
+							'theme_location' => 'primary',
+							'menu_id'        => 'primary-menu',
+							// 'walker'         => new beetroot_navwalker(), ----- what is that?
+						]
+					);
+				endif;
+				?>
+			</nav><!-- .nav-primary -->
+			<div class="search-form">
+				<?php dynamic_sidebar('search-widget'); ?>
+			</div>
+		</div><!-- .container -->
+	</header><!-- .banner -->
+	<div id="content" class="site-content">
