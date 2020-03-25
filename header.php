@@ -22,25 +22,27 @@
 
 <body <?php body_class(); ?>>
 	<header class="banner">
-		<div class="container">
+		<div class="container header-container">
 			<a class="brand" href="<?php esc_url(home_url('/')); ?>">
-				<img src="<?php echo get_field('site_logo', 'option')['url']; ?>" alt="<?php echo get_field('site_logo', 'option')['alt']; ?>">
+				<img src="<?php echo get_field('site_logo', 'option')['url']; ?>" alt="<?php echo get_field('site_logo', 'option')['alt']; ?>" width="<?php echo get_field('site_logo', 'option')['width']; ?>" height="<?php echo get_field('site_logo', 'option')['height']; ?>">
 			</a>
-			<nav class="nav-primary">
-				<?php
-				if (has_nav_menu('primary')) :
-					wp_nav_menu(
-						[
-							'theme_location' => 'primary',
-							'menu_id'        => 'primary-menu',
-							// 'walker'         => new beetroot_navwalker(), ----- what is that?
-						]
-					);
-				endif;
-				?>
-			</nav><!-- .nav-primary -->
-			<div class="search-form">
-				<?php dynamic_sidebar('search-widget'); ?>
+			<div class="navigation-content">
+				<nav class="nav-primary">
+					<?php
+					if (has_nav_menu('primary')) :
+						wp_nav_menu(
+							[
+								'theme_location' => 'primary',
+								'menu_id'        => 'primary-menu',
+								// 'walker'         => new beetroot_navwalker(), ----- what is that?
+							]
+						);
+					endif;
+					?>
+				</nav><!-- .nav-primary -->
+				<div class="search-form">
+					<?php dynamic_sidebar('search-widget'); ?>
+				</div>
 			</div>
 		</div><!-- .container -->
 	</header><!-- .banner -->
