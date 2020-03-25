@@ -24,7 +24,7 @@
 	<header class="banner">
 		<div class="container">
 			<a class="brand" href="<?php esc_url(home_url('/')); ?>">
-				<img src="<?php echo get_field('site_logo', 'option')['url']; ?>" alt="<?php echo get_field('site_logo', 'option')['alt']; ?>">
+				<img src="<?php the_field('site_logo', 'option')['url']; ?>" alt="<?php the_field('site_logo', 'option')['alt']; ?>">
 			</a>
 			<nav class="nav-primary">
 				<?php
