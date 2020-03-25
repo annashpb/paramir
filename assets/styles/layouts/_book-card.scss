@@ -1,0 +1,96 @@
+.books-preview {
+    &__list {
+        list-style: none;
+    }
+    &__link {
+        display: block;
+        width: 270px;
+        height: 375px;
+        text-decoration: none;
+        position: relative;
+        transition: all 200ms linear;
+        &:hover {
+            transform: scale(1.14);
+        }
+        &:hover .books-preview__descr--short {
+            display: none;
+        }
+        &:hover .books-preview__descr--full {
+            display: block;
+        }
+        &:focus .books-preview__descr--short {
+            display: none;
+        }
+        &:focus .books-preview__descr--full {
+            display: block;
+        }
+    }    
+    &__cover {
+        object-fit: cover;
+    }
+    &__descr {
+        position: absolute;
+        left: 0;
+        right: 0;        
+        background-color: rgba(255, 255, 255, 0.6);
+        &--short {
+            top: 55%;
+            height: 106px;
+            padding: 20px;
+            transition: display 200ms linear;
+        }
+        &--full {
+            top: 50%;
+            height: 160px;
+            padding: 30px;
+            display: none;
+            transition: display 200ms linear;
+        }
+    }
+    &__author {
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #000000;
+    }
+    &__name {
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 20px;
+        color: #000000;
+    }
+    &__additional {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+    &__price {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    &__available--not {
+        font-size: 16px;
+        font-weight: 300;
+        color: #808080;
+        text-align: center;
+        padding: 18px 0px;
+    }
+}
+
+// .books-preview__link:hover .books-preview__descr--short {
+//     display: none;
+// }
+
+// .books-preview__link:hover .books-preview__descr--full {
+//     display: block;
+// }
+
+// .books-preview__link:focus .books-preview__descr--short {
+//     display: none;
+// }
+
+// .books-preview__link:focus .books-preview__descr--full {
+//     display: block;
+// }
