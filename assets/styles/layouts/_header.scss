@@ -1,55 +1,102 @@
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .nav-primary {
-    padding: 20px 0px;
+  padding: 20px 0;
 }
 
 .navigation-content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.primary-menu {
-    list-style: none;
+#primary-menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  width: 750px;
+
+  & li {
+    & a {
+      text-decoration: none;
+      font-size: 18px;
+      color: $color-secondary;
+      font-weight: 300;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        background-color: #673b11;
+        height: 2px;
+        width: -webkit-fill-available;
+        margin-top: 10px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 200ms linear;
+      }
+
+      &:hover {
+        font-weight: 700;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &:focus {
+        font-weight: 700;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  & li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.widget_search {
+  text-align: right;
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.search {
+  &-form {
     display: flex;
     justify-content: flex-end;
-    & li {
-        & a {
-            text-decoration: none;
-            font-size: 18px;
-            color: $color-secondary;
-            font-weight: 300;
-            position: relative;
-            &::after {
-                content: "";
-                display: block;
-                background-color: #673b11;
-                height: 2px;
-                width: -webkit-fill-available;
-                margin-top: 30px;
-                position: absolute;
-                opacity: 0;
-                transition: opacity 200ms linear;
-            }
-            &:hover {
-                font-weight: 700;
-                &::after {
-                    opacity: 1;
-                }
-            }
-            &:focus {
-                font-weight: 700;
-                &::after {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-    & li:not(:last-child) {
-        margin-right: 30px;
-    }
+  }
+
+  &-field {
+    width: 660px;
+    height: 44px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 6px;
+    box-shadow: 4px 4px 10px rgba($color: #000, $alpha: 0.4);
+    border: none;
+  }
+
+  &-submit {
+    width: 90px;
+    height: 44px;
+    background-color: $color-secondary;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-image: url("../../images/icon_search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 4px 4px 10px rgba($color: #000, $alpha: 0.4);
+    border: none;
+  }
 }
