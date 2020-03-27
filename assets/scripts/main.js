@@ -1,10 +1,8 @@
 // import external dependencies
 
-import "jquery";
+import "jquery"
 
 // Import everything from autoload
-import "./autoload/**/*";
+import "./autoload/**/*"
 
 jQuery(document).ready(() => {});
-
-console.log("Hello world!");
