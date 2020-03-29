@@ -7,7 +7,21 @@
             $args = array(
                 'post_type' => 'books',
                 'showposts' => 3,
-                'paged' => get_query_var('page')
+                'paged' => get_query_var('page'),
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    'price' => array(
+                        'key' => 'price',
+                        'type' => 'NUMERIC'
+                    ),
+                    'is_available' => array(
+                        'key' => 'is_available'
+                    )
+                ),
+                'orderby' => array(
+                    'is_available' => 'DESC',
+                    'price' => 'DESC'
+                )
             );
             $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
@@ -37,10 +51,10 @@
                             </a>
                         </li>
                     <?php endwhile; ?>
-                    <?php
-                    wp_pagenavi(array('query' => $the_query));
-                    wp_reset_postdata(); ?>
                 </ul>
+                <?php
+                wp_pagenavi(array('query' => $the_query));
+                wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
     </section>
